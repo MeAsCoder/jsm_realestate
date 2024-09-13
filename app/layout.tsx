@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProgressBar from '../components/ProgressBar';
 import './globals.css'; // Optional: Global styles
-import NProgress from 'nprogress';
 import Head from 'next/head';
 //import Router, { usePathname } from 'next/navigation'; 
 //import { useEffect } from 'react';
@@ -16,21 +15,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
-  /*
-  const pathname = usePathname(); // Hook for detecting route changes
-
-  useEffect(() => {
-    // Start NProgress when route changes
-    NProgress.start();
-
-    // Complete NProgress once the route is fully loaded
-    NProgress.done();
-
-  }, [pathname]); // Re-run whenever the pathname changes
-
-  
-*/
 
 
   return (
