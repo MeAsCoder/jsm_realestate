@@ -6,7 +6,21 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import Property from '../components/Property';
 
-import { ReactNode } from 'react';
+
+interface PropertyType {
+  id: string;
+  price: number;
+  title: string;
+  location: {
+    name: string;
+  };
+  coverPhoto: {
+    url: string;
+  };
+  rooms: number;
+  baths: number;
+  area: number;
+}
 
 // Define the type for props
 type BannerProps = {

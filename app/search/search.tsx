@@ -10,7 +10,30 @@ import Property from '../../components/Property';
 import SearchFilters from '../../components/SearchFilters';
 import noresult from '../../assets/images/noresult.svg';
 
-const Search = ({ properties, purpose }: any) => {
+
+interface PropertyType {
+  id: string;
+  price: number;
+  title: string;
+  location: {
+    name: string;
+  };
+  coverPhoto: {
+    url: string;
+  };
+  rooms: number;
+  baths: number;
+  area: number;
+}
+
+interface SearchProps {
+  properties: PropertyType[];
+  purpose?: string;
+}
+
+
+
+const Search = ({ properties, purpose }: SearchProps) => {
   const [searchFilters, setSearchFilters] = useState(false);
 
   // Ensure purpose has a default value if not provided
