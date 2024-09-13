@@ -62,7 +62,7 @@ const Search = ({ properties, purpose }: SearchProps) => {
       </Text>
       <Flex flexWrap='wrap'>
         {properties.length > 0 ? (
-          properties.map((property: any) => (
+          properties.map((property: PropertyType) => (
             <Link key={property.id} href={`/property/${property.id}`} passHref>
               <Box width="100%" mb="4">
                 <Property property={property} />
