@@ -142,15 +142,16 @@ interface PropertyType {
   rooms: number;
   baths: number;
   area: number;
-  rentFrequency?: string; // Optional
-  agency?: {
-    logo?: {
+  rentFrequency: string; // Make required
+  agency: {
+    logo: {
       url: string;
     };
-  };
-  isVerified?: boolean; // Optional
-  externalID?: string; // Optional
+  }; // Make required
+  isVerified: boolean; // Make required
+  externalID: string; // Make required
 }
+
 
 // Define the type for props
 type BannerProps = {

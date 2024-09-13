@@ -11,6 +11,15 @@ import SearchFilters from '../../components/SearchFilters';
 import noresult from '../../assets/images/noresult.svg';
 
 
+
+
+interface SearchProps {
+  properties: PropertyType[];
+  purpose?: string;
+}
+
+
+
 interface PropertyType {
   id: string;
   price: number;
@@ -24,13 +33,15 @@ interface PropertyType {
   rooms: number;
   baths: number;
   area: number;
+  rentFrequency: string; // Make required
+  agency: {
+    logo: {
+      url: string;
+    };
+  }; // Make required
+  isVerified: boolean; // Make required
+  externalID: string; // Make required
 }
-
-interface SearchProps {
-  properties: PropertyType[];
-  purpose?: string;
-}
-
 
 
 const Search = ({ properties, purpose }: SearchProps) => {
