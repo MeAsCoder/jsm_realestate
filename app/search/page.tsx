@@ -3,7 +3,7 @@
 import { fetchApi, baseUrl } from '../../utils/fetchApi';
 import Search from './search'; // Adjust path if necessary
 
-export default async function SearchPage({ searchParams }) {
+export default async function SearchPage({ searchParams }: any) {
   const purpose = searchParams.purpose || 'for-rent';
   const rentFrequency = searchParams.rentFrequency || 'yearly';
   const minPrice = searchParams.minPrice || '0';

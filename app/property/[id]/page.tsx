@@ -7,7 +7,7 @@ import millify from 'millify';
 import { baseUrl, fetchApi } from '../../../utils/fetchApi';
 import ImageScrollbar from '../../../components/ImageScrollbar';
 
-export default async function PropertyDetails({ params }) {
+export default async function PropertyDetails({ params}: any) {
   const { id } = params; // dynamic id from URL
   const data = await fetchApi(`${baseUrl}/properties/detail?externalID=${id}`);
 
@@ -79,8 +79,8 @@ export default async function PropertyDetails({ params }) {
           </Text>
         )}
         <Flex flexWrap="wrap">
-          {amenities?.map((item) =>
-            item.amenities?.map((amenity) => (
+          {amenities?.map((item: any) =>
+            item.amenities?.map((amenity: any) => (
               <Text
                 key={amenity.text}
                 fontWeight="bold"

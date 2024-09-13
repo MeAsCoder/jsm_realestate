@@ -10,7 +10,7 @@ import Property from '../../components/Property';
 import SearchFilters from '../../components/SearchFilters';
 import noresult from '../../assets/images/noresult.svg';
 
-const Search = ({ properties, purpose }) => {
+const Search = ({ properties, purpose }: any) => {
   const [searchFilters, setSearchFilters] = useState(false);
 
   // Ensure purpose has a default value if not provided
@@ -39,7 +39,7 @@ const Search = ({ properties, purpose }) => {
       </Text>
       <Flex flexWrap='wrap'>
         {properties.length > 0 ? (
-          properties.map((property) => (
+          properties.map((property: any) => (
             <Link key={property.id} href={`/property/${property.id}`} passHref>
               <Box width="100%" mb="4">
                 <Property property={property} />

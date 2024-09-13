@@ -6,8 +6,22 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import Property from '../components/Property';
 
+import { ReactNode } from 'react';
+
+// Define the type for props
+type BannerProps = {
+  purpose: string;
+  title1: string;
+  title2: string;
+  desc1: string;
+  desc2: string;
+  buttonText: string;
+  linkName: string;
+  imageUrl: string;
+};
+
 // Banner component
-const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
+const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }: BannerProps) => (
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner" />
 
@@ -50,7 +64,7 @@ export default async function Home() {
 
         <Flex flexWrap="wrap">
           {propertiesForRent.length ? (
-            propertiesForRent.map((property) => <Property property={property} key={property.id} />)
+            propertiesForRent.map((property: any) => <Property property={property} key={property.id} />)
           ) : (
             <Text>No properties for rent found</Text>
           )}
@@ -69,7 +83,7 @@ export default async function Home() {
 
         <Flex flexWrap="wrap">
           {propertiesForSale.length ? (
-            propertiesForSale.map((property) => <Property property={property} key={property.id} />)
+            propertiesForSale.map((property: any) => <Property property={property} key={property.id} />)
           ):(
             <Text>No properties for sale found</Text>
           )}
