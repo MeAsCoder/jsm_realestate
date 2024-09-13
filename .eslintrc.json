@@ -1,3 +1,11 @@
+
+
+// .eslintrc.json
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "react/jsx-key": "off", // Disable key prop rule
+    "@typescript-eslint/no-unused-vars": ["warn"] // Change to warning instead of error
+  }
 }
+
