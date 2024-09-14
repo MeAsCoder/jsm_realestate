@@ -128,6 +128,11 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import Property from '../components/Property';
 
+
+console.log(process.env.NEXT_PUBLIC_RAPIDAPI_KEY);
+console.log(process.env.NEXT_PUBLIC_RAPIDAPI_HOST);
+
+
 // Define the type for property
 interface PropertyType {
   id: string;
