@@ -188,8 +188,12 @@ export default async function Home() {
     const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`);
     const propertyForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`);
 
+    ;
+
     const propertiesForSale: PropertyType[] = propertyForSale?.hits || [];
     const propertiesForRent: PropertyType[] = propertyForRent?.hits || [];
+    console.log(propertiesForRent);
+    console.log(propertiesForSale);
 
     return (
       <Box>
