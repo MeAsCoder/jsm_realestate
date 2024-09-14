@@ -9,6 +9,7 @@ import Image from 'next/image';
 import Property from '../../components/Property';
 import SearchFilters from '../../components/SearchFilters';
 import noresult from '../../assets/images/noresult.svg';
+import { Agency, CoverPhoto } from '@/components/types';
 
 
 
@@ -21,26 +22,67 @@ interface SearchProps {
 
 
 interface PropertyType {
-  id: string;
+  id: number;
+  objectID: number;
+  ownerID: number;
+  userExternalID: string;
+  sourceID: number;
+  state: string;
+  geography: {
+    lat: number;
+    lng: number;
+  };
+  purpose: string;
   price: number;
+  product: string;
+  productLabel: string;
+  rentFrequency: string | null;
+  referenceNumber: string;
+  permitNumber: string;
   title: string;
-  location: {
-    name: string;
-  };
-  coverPhoto: {
-    url: string;
-  };
+  title_l1: string;
+  description: string;
+  description_l1: string;
+  externalID: string;
+  slug: string;
+  isVerified: boolean;
+  slug_l1: string;
+  location: any; // Adjust this type as needed
+  category: any; // Adjust this type as needed
+  createdAt: number;
+  approvedAt: number;
+  updatedAt: number;
+  touchedAt: number;
+  reactivatedAt: number;
   rooms: number;
   baths: number;
   area: number;
-  rentFrequency: string; // Make required
-  agency: {
-    logo: {
-      url: string;
-    };
-  }; // Make required
-  isVerified: boolean; // Make required
-  externalID: string; // Make required
+  score: number;
+  score_l1: number;
+  coverPhoto: CoverPhoto;
+  photos: any[]; // Adjust this type as needed
+  floorPlans: any[]; // Adjust this type as needed
+  videos: any[]; // Adjust this type as needed
+  panoramas: any[]; // Adjust this type as needed
+  amenities: any[]; // Adjust this type as needed
+  phoneNumber: {
+    mobile: string;
+    phone: string;
+    whatsapp: string;
+    proxyMobile: string;
+  };
+  contactName: string;
+  agency: Agency;
+  completionStatus: string;
+  randBoostScore: number;
+  randBoostScore_l1: number;
+  furnishingStatus: string | null;
+  extraFields: any; // Adjust this type as needed
+  type: string;
+  cityLevelScore: number;
+  indyScore: number;
+  indyScore_l1: number;
+  hasMatchingFloorPlans: boolean;
 }
 
 
